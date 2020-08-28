@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-image: url(https://cdn.discordapp.com/attachments/587307618155102257/699987534532575342/53624.jpg);
+	background-attachment: fixed;
+	background-size: cover;
+	text-align: center;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 50%;
+}
+
+h1 {
+	font-size: 40px;
+	margin: 0px;
+	padding: 20px;
+}
+
+h2 {
+	margin-top: 50px;
+}
+
+h3 {
+	margin: 0;
+	padding: 12px;
+	font-size: 18px;
+}
+
+div {
+	margin-bottom: 0;
+}
+
+p {
+	text-align: left;
+	padding: 10px;
+	font-size: 18px;
+	overflow: visible;
+	height: 280px;
+	width: 200px;
+}
+
+canvas {
+	height: 400px;
+	width: 400px;
+}
+
+span {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+}
+
+.bande_noire_haut, .bande_noire_milieu, .bande_noire_bas, .bande_noire_bas_2{
+	color: white;
+	background: rgba(0,0,0,0.5);
+}
+
+.bande_noire_haut {
+	background: rgba(0,0,0,0.7);
+}
+
+.fonce {
+	background: rgba(0,0,0,0.2);
+}
+
+.bande_noire_milieu {
+	height: 100%;
+	padding: 50px ;
+	flex-direction: row;
+}
+.bande_noire_bas {
+	padding: 15px;
+	font-size: 18px;
+}
+
+.bande_noire_bas_2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 80px;
+	font-size: 20px;
+}
+
+.ligne {
+	background-color: white;
+	transition: width 0.2s ease-in-out;
+	width: 0%;
+	height: 1px;
+	display: block;
+	margin-top: 10px;
+}
+
+.bande_noire_bas_2:hover .ligne {
+	width: 15%;
+}
+
+.exercice {
+	display: flex;
+	justify-content: center;
+	padding: 50px 0;
+	border-bottom: 1px solid;
+	width: 100%;
+}
+
+.exercice:last-child {
+	border-bottom: none;
+}
+
+.texte {
+	width: 40%;
+}
+.overflow {
+	border: none;
+	overflow-y: scroll;
+	transition: border 0.2s ease-in-out;
+}
+.overflow:hover {
+	border: 2px 40% solid white;
+}
+
+.liste {
+	margin: 10px;
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:  150px 150px 150px 150px 150px;
+  grid-gap: 10px;
+	border-bottom: 1px solid;
+}
+
+.nom_commande {
+	transition: background 0.2s ease-in-out;
+	padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nom_commande:hover {
+	background: rgba(0,0,0,0.5);
+}
+.nom_commande:hover .popup{
+	display: inline;
+}
+
+.popup {
+    position: grid;
+    background-color: rgb(0, 0, 0,0.9);
+    display: none;
+    padding: 10px;
+    transition: display 0.2s ease-in-out;
+}
+
+.closer {
+	display: none;
+}
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+	<title>Processing: Resultats</title>
+</head>
+<body>
+
+	<div class="bande_noire_haut">
+	  <h1>Rendu de travail</h1>
+	</div>
+
+	<div class="bande_noire_milieu">
+	  <div class="exercice">
+	  	<div class="texte">
+	  		<h3>Exercice 1</h3>
+	  		<p>size(400, 400); <br>
+		  	line(400,400,0,0);<br>
+		  	line(0,400,400,0);<br>
+		  	line(160,320,240,320);<br>
+		  	line(160,80,240,80);<br>
+		  	line(240,200,320,200);<br>
+		  	line(80,200,160,200);</p>
+	  	</div>
+	  	<script type="application/processing">
+		  	size(400, 400); 
+		  	line(400,400,0,0);
+		  	line(0,400,400,0);
+		  	line(160,320,240,320);
+		  	line(160,80,240,80);
+		  	line(240,200,320,200);
+		  	line(80,200,160,200);
+		  </script> 
+		  <canvas> </canvas>
+	  </div>
+
+	  <div class="exercice">
+	  	<div class="texte">
+	  		<h3>Exercice 2</h3>
+	  		<p>size(400, 400); <br>
+		  	size(400, 400); <br>
+		  	<br>
+		  	void setup() <br>
+		  	{ frameRate (1);}<br>
+		  	<br>
+		  	void draw()<br>
+		  	{ background(random(400),[...],[...]);<br>
+		  	 line(random(400),[...],[...],[...]);}</p>
+	  	</div>
+	  	<script type="application/processing">
+		  size(400, 400); 
+		  void setup() {
+		  frameRate (1);
+		  }
+
+		  void draw() {
+		  background(random(400),random(400),random(400));
+		  line(random(400),random(400),random(400),random(400));
+		}
+		  </script> 
+		  <canvas> </canvas>
+	  </div>
+
+	  <div class="exercice">
+	  	<div class="texte">
+	  	  <h3>Exercice 3</h3>
+	  		<p>
+	  		size(400, 400); <br>
+	  		void setup(){<br>
+	  		frameRate(4); }<br>
+	  		<br>
+	  		void draw()<br>
+	  		{stroke(255,255,255);<br>
+	  		strokeWeight(10);<br>
+	  		background(0,0,0); <br>
+	  		point(random(400),random(400));<br>
+	  		stroke(255,0,0);<br>
+	  		line(200,200,random(400),[...]); }<br>
+	  		</p>
+	  	</div>
+	  	<script type="application/processing">
+	  		size(400, 400); 
+	  		void setup(){
+	  		frameRate(4); }
+
+	  		void draw()
+	  		{stroke(255,255,255);
+	  		strokeWeight(10);
+	  		background(0,0,0); 
+	  		point(random(400),random(400));
+	  		stroke(255,0,0);
+	  		line(200,200,random(400),random(400)); }
+		  </script> 
+		  <canvas> </canvas>
+	  </div>
+
+	  <div class="exercice">
+	  	<div class="texte">
+	  	  <h3>Exercice 4</h3>
+	  		<p>
+	  		float x = 50; <br>
+	  		void setup() <br>
+	  		{ size(400, 400); }<br>
+	  		<br>
+	  		void draw() <br>
+	  		{background(#C0E1EA); <br>
+	  		stroke(#FFBC03); <br>
+	  		fill(#B6FF00); <br>
+	  		ellipse(x, 20, 40, 40);<br>
+	  		x = x + 1; }<br>
+	  		<br>
+	  		void reset() <br>
+	  		{ background(black);<br>
+	  		x = 50; }
+	  		</p>
+	  	</div>
+	  	<script type="application/processing">
+	  		float x = 50;
+	  		void setup() 
+	  		{ size(400, 400); }
+
+	  		void draw() 
+	  		{background(#C0E1EA); 
+	  		stroke(#FFBC03); 
+	  		fill(#B6FF00); 
+	  		ellipse(x, 20, 40, 40);
+	  		x = x + 1; }
+
+	  		void reset() 
+	  		{ background(black);
+	  		x = 50; }
+		  </script> 
+		  <canvas> </canvas>
+	  </div>
+
+	  <div class="exercice">
+	  	<div class="texte"> 
+	  	  <h3>Exercice 5</h3><p class="overflow">
+	  		float r = 1; <br>
+	  		float circle_size = 40;<br>
+<br>
+	  		void setup() <br>
+	  		{ size(400, 400); <br>
+	  		background(0, 0, 0); <br>
+	  		smooth(); <br>
+	  		noStroke();} <br>
+<br>
+	  		void draw()<br>
+	  		{ fill(255); <br>
+	  		rotate(r); <br>
+	  		float circle_size = random(10, 10); <br>
+	  		ellipse(10 + r, 10, circle_size, circle_size); <br>
+	  		r = r + 1; <br>
+	  		println(r); }
+	  		</p>
+	  	</div>
+	  	<script type="application/processing">
+	  		float r = 1; 
+float circle_size = 40;
+
+void setup() { 
+  size(400, 400); 
+  background(0, 0, 0); 
+  smooth(); 
+  noStroke();
+} 
+
+void draw() { 
+  fill(255); 
+  rotate(r); 
+  float circle_size = random(10, 10); 
+  ellipse(10 + r, 10, circle_size, circle_size); 
+  r = r + 1; 
+  println(r);
+}
+		  </script> 
+		  <canvas> </canvas>
+	  </div>
+
+	  <h2>Commandes utilisées</h2>
+	  <div class="liste exerice">
+		<div class="nom_commande" onmouseover="afficheraide('point()')" onmouseout="cacheraide('point()')">point(x,y) <br>
+		<div class="popup" id="point()_aide">Crée un point de coordonnées (x,y)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('ligne()')" onmouseout="cacheraide('ligne()')">lign(x,y,x2,y2)<br>
+		<div class="popup" id="ligne()_aide">Fait une ligne de (x,y) à (x2,y2)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('float_r_X')" onmouseout="cacheraide('float_r_X')">float r = X <br>
+		<div class="popup" id="float_r_X_aide">Creer une variable de nom r et de valeur X </div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('void_setup')" onmouseout="cacheraide('void_setup')">void setup() { } <br>
+		<div class="popup" id="void_setup_aide">Fonction pour preparer le dessin</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('size(x,y)')" onmouseout="cacheraide('size(x,y)')">size(X,Y) <br> 
+		<div class="popup" id="size(x,y)_aide">Change la taille de l'ecran</div></div>
+
+      <div class="nom_commande" onmouseover="afficheraide('background(x)')" onmouseout="cacheraide('background(x)')">background(X) <br> 
+      <div class="popup" id="background(x)_aide">Change la couleur de l'ecran (r,g,b)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('smooth()')" onmouseout="cacheraide('smooth()')">smooth() <br> 
+		<div class="popup" id="smooth()_aide">Definit la lisseur des traits</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('nostroke')" onmouseout="cacheraide('nostroke')">noStroke() <br> 
+		<div class="popup" id="nostroke_aide">Retire la ligne exterieure (outline)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('void_draw()')" onmouseout="cacheraide('void_draw()')">void draw() { } <br>
+		<div class="popup" id="void_draw()_aide">Fonction à executer, dessine</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('fill()')" onmouseout="cacheraide('fill()')">fill(255)  <br>
+		<div class="popup" id="fill()_aide">Remplit une forme d'une certaine couleur (r,g,b)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('rotate()')" onmouseout="cacheraide('rotate()')">rotate(r) <br>
+		<div class="popup" id="rotate()_aide">Fait une rotation de r degres</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('random()')" onmouseout="cacheraide('random()')">float circle_size = random(X,Y) <br>
+		<div class="popup" id="random()_aide">Cree un array avec 2 valeurs crees aleatoirement</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('ellipse()')" onmouseout="cacheraide('ellipse()')">ellipse(X + r, 10, circle_size, circle_size)	<br>
+		<div class="popup" id="ellipse()_aide">Cree un cercle de rayon circle_size et avec les coordonnees de centre (10 + r, 10)</div></div>
+
+		<div class="nom_commande" onmouseover="afficheraide('r = r + X')" onmouseout="cacheraide('r = r + X')">r = r + X <br>
+		<div class="popup" id="r = r + X_aide">Augmente la valeur de r par X</div></div>  
+
+		<div class="nom_commande" onmouseover="afficheraide('println()')" onmouseout="cacheraide('println()')">println(r)<br>
+		<div class="popup" id="println()_aide">Output la variable r</div></div>
+	</div>
+	</div>
+	
+	<div class="bande_noire_bas">Ce site a été fait par Arnaud#8583</div> 
+
+	<div class="bande_noire_bas_2">
+		<a href="javascript:scrollTo({top: 0, left: 0, behavior: 'smooth'})">Back to top</a>
+		<div class="ligne"> </div>
+	</div>
+</body>
+
+<script type="text/javascript">
+function afficheraide(x) {
+  document.getElementById(x +"_aide").style.display = "inline";
+}
+
+function cacheraide(x) {
+  document.getElementById(x +"_aide").style.display = "none";
+}
+
+function resetjs() {
+  var codeprocessing = document.getElementById('processing_code');
+  console.log(codeprocessing)
+  codeprocessing.reset()
+}
+// void setup() { }  signifie : fonction pour preparer le dessin
+
+// size(X,Y) signifie : changer la taille de l'ecran
+
+//  background(X) signifie : changer la couleur de l'ecran (r,g,b)
+
+// smooth() signifie : Definit la lisseur des traits
+
+// noStroke() signifie : Retire la ligne exterieure (outline)
+
+ 
+
+// void draw() { } signifie : fonction à executer, dessine
+
+//  fill(255)  signifie : remplir une forme d'une certaine couleur (r,g,b)
+
+//  rotate(r) signifie : faire une rotation de r degres
+
+//  float circle_size = random(X,Y) signifie : creer un array avec 2 valeurs cree aleatoirement
+
+//  ellipse(X + r, 10, circle_size, circle_size) signifie : creer un cercle de rayon circle_size et avec les coordonnees de centre (X + r, 10) 
+
+//  r = r + X signifie : Augmenter la valeur de r par X
+
+//  println(r) signifie : output la variable r 
+</script>
+
+</html>
